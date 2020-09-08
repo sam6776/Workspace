@@ -12,17 +12,13 @@ public class Pair
 {
     private int num1;
     private int num2;
-    /*
-    Constructor
-
-    Initializes the numbers inputted in the driver to the instance data.
-
-    Input: 
-    2 integers
-
-    Output: 
-    None
-    */
+    /** Constructor
+     * 
+     * Declares the values of the instance data from the inputted numbers
+     * 
+     * @param num1, the first number
+     * @param num2, the second number
+     */
     public Pair(int num1, int num2)
     {
         this.num1 = num1;
@@ -64,6 +60,12 @@ public class Pair
             return num2;
         }
     }
+    /** Min
+     * 
+     * Tests to find the smaller of the two numbers
+     * 
+     * @return
+     */
     public int min()
     {
         if(num1 < num2)
