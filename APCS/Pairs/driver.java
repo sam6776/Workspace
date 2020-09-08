@@ -36,8 +36,8 @@ public class driver
         // Invoking the Pairs class, calling the constructor, and testing the methods
         Pair nums = new Pair(num1, num2);
         System.out.println("sum: " + nums.sum());
-        System.out.println(nums.average());
-        System.out.println(nums.diff());
+        System.out.println("Average: " + nums.average());
+        System.out.println("Difference: " + nums.diff());
         System.out.println(nums.dist());
         System.out.println(nums.max());
         System.out.println(nums.min());
