@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class driver
+public class PairTest
 {
     public static void main(String[] args)
     {
