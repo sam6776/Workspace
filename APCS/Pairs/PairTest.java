@@ -23,11 +23,13 @@ public class PairTest
                 notEqual = false;
                 System.out.println("Numbers are equal. Please input different numbers.");
             }
-            else{
+            else
+            {
                 notEqual = true;
             }
         } while (notEqual == false);
-        try {
+        try 
+        {
             input1.close();
             input2.close();
         } catch (Exception e) {
