@@ -13,7 +13,8 @@ public class PairTest
 
         // Taking number inputs and testing to make sure they're not the same 
         // to not cause an error in the min and max methods
-        do { 
+        do 
+        { 
             System.out.print("Input a number: ");
             num1 = input1.nextInt();
             System.out.print("Input another number that isn't equal to the previous one: ");
@@ -32,7 +33,8 @@ public class PairTest
         {
             input1.close();
             input2.close();
-        } catch (Exception e) {
+        } catch (Exception e) 
+        {
             //TODO: handle exception
         }
         // Invoking the Pairs class, calling the constructor, and testing the methods
