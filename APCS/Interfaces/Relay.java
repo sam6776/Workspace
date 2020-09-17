@@ -26,4 +26,12 @@ public class Relay
      }
         
 }       
-        
+/*
+1. There is no reference to TimeA in Time.
+2. NA
+3. There is a reference to Time.java next to the class name
+and the work impliments.
+4. 
+
+
+*/    
