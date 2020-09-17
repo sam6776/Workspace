@@ -14,10 +14,10 @@ public class Relay
 
      public static void main(String[] args) 
      {
-        TimeA[] raceLegs = new TimeA[3];
-        raceLegs[0] = new TimeA(905);
-        raceLegs[1] = new TimeA(0,1,43);
-        raceLegs[2] = new TimeA("0:45:17");
+        TimeB[] raceLegs = new TimeB[3];
+        raceLegs[0] = new TimeB(905);
+        raceLegs[1] = new TimeB(0,1,43);
+        raceLegs[2] = new TimeB("0:45:17");
         
         System.out.println("First runner:  " + raceLegs[0].toString());
         System.out.println("Second runner: " + raceLegs[1].toString());

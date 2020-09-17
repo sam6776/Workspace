@@ -8,44 +8,38 @@
  */
 public class TimeB implements Time {
 
-    private int hours;
-    private int minutes;
-    private int seconds;
-
+    private int total;
+    
     /**
      * Simple constructor assumes data is in proper format
-     * 
      * @param h number of hours
      * @param m number of minutes
      * @param s number of seconds
      */
-    public TimeB(int h, int m, int s) {
-        hours = h;
-        minutes = m;
-        seconds = s;
+    public TimeB(int h, int m, int s) 
+    {
+        total = 3600 * h + 60 * m + s;
     }
-
+    
     /**
      * Constructor that assumes a total number of seconds
-     * 
      * @param total the total number of seconds taken
-     */
-    public TimeB(int total) {
-        hours = total / 3600;
-        minutes = (total / 60) % 60;
-        seconds = total % 60;
+     */   
+    public TimeB(int total) 
+    {
+        this.total = total;
     }
-
+    
     /**
      * Constructor that assumes a properly formatted time String
-     * 
      * @param time the time as a string
      */
-    public TimeB(String time) {
+    public TimeB(String time) 
+    {
         String[] data = time.split(":");
-        hours = Integer.parseInt(data[0]);
-        minutes = Integer.parseInt(data[1]);
-        seconds = Integer.parseInt(data[2]);
+        total = (3600 * Integer.parseInt(data[0])) + 
+        (60 * Integer.parseInt(data[1])) + 
+        (Integer.parseInt(data[2]));
     }
 
     /**
@@ -60,8 +54,7 @@ public class TimeB implements Time {
         // add them all together
         int totalTime = ((this.getHours() + otherTime.getHours()) * 3600)
                 + ((this.getMinutes() + otherTime.getMinutes()) * 60) + (this.getSeconds() + otherTime.getSeconds());
-        return new TimeB(totalTime / 3600, (totalTime / 60) % 60, 
-        totalTime % 60); // reduce them to smallest values and return
+        return new TimeB(totalTime); // reduce them to smallest values and return
     }
     /** Gets the seconds value from instance data
      * 
@@ -69,7 +62,7 @@ public class TimeB implements Time {
      */
     public int getSeconds()
     {
-        return seconds;
+        return total % 60;
     }
        /** Gets the minutes value from instance data
      * 
@@ -77,7 +70,7 @@ public class TimeB implements Time {
      */
     public int getMinutes()
     {
-        return minutes;
+        return (total / 60) % 60;
     }
        /** Gets the hours value from instance data
      * 
@@ -85,7 +78,7 @@ public class TimeB implements Time {
      */
     public int getHours()
     {
-        return hours;
+        return total / 3600;
     }
     
     /**
@@ -94,8 +87,8 @@ public class TimeB implements Time {
      */
     public String toString() 
     {
-        String representation = "Hours: " + hours + ", Minutes: "
-        + minutes + ", Seconds: " + seconds;
+        String representation = "Hours: " + total / 3600 + ", Minutes: "
+        + (total / 60) % 60 + ", Seconds: " + total % 60;
          return representation;
     } 
 }
