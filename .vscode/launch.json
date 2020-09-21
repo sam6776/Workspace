@@ -1,28 +1,35 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Relay",
-            "request": "launch",
-            "mainClass": "Relay",
-            "projectName": "Workspace_9528fb84"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch) - Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch)-PairTest<Workspace_9528fb84>",
-            "request": "launch",
-            "mainClass": "PairTest",
-            "projectName": "Workspace_9528fb84"
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Relay",
+      "request": "launch",
+      "mainClass": "Relay",
+      "projectName": "Workspace_9528fb84"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch) - Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-PairTest<Workspace_9528fb84>",
+      "request": "launch",
+      "mainClass": "PairTest",
+      "projectName": "Workspace_9528fb84"
+    }
+  ]
 }
