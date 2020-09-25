@@ -1,10 +1,12 @@
+import java.text.DecimalFormat;
+
 //********************************************************************
 //  Rational.java       Author: Lewis/Loftus/Cocking
 //
 //  Represents one rational number with a numerator and denominator.
 //********************************************************************
 
-public class Rational
+public class Rational implements Comparable
 {
    private int numerator, denominator;
 
@@ -160,5 +162,19 @@ public class Rational
             num2 = num2 - num1;
 
       return num1;
+   }
+
+   @Override
+   public int compareTo(Object obj)
+   {
+      Rational rat = (Rational) obj;
+      int otherDenom = rat.getDenominator();
+      int otherNum =  rat.getNumerator();
+      double otherValue = otherNum / otherDenom;
+      double Value = this.numerator / this.denominator;
+      DecimalFormat df = new DecimalFormat("#.####");
+      otherValue = Double.parseDouble(df.format(otherValue));
+      Value = Double.parseDouble(df.format(Value));
+      return (int) (Value - otherValue);
    }
 }

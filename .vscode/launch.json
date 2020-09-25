@@ -5,20 +5,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: Current File",
-      "type": "python",
-      "request": "launch",
-      "program": "${file}",
-      "console": "integratedTerminal"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - Relay",
-      "request": "launch",
-      "mainClass": "Relay",
-      "projectName": "Workspace_9528fb84"
-    },
-    {
       "type": "java",
       "name": "Debug (Launch) - Current File",
       "request": "launch",
@@ -26,10 +12,16 @@
     },
     {
       "type": "java",
-      "name": "Debug (Launch)-PairTest<Workspace_9528fb84>",
+      "name": "Debug (Launch)",
       "request": "launch",
-      "mainClass": "PairTest",
-      "projectName": "Workspace_9528fb84"
+      "mainClass": ""
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
     }
   ]
 }
