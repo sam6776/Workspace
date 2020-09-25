@@ -1,3 +1,4 @@
+package APCS.Interfaces;
 /**
  * TimeA - a class to store records of race times that run 
  * in units measured in hours/minutes/seconds.

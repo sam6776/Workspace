@@ -1,3 +1,4 @@
+package APCS.Pairs;
 /*
 This class takes 2 numbers and does the following: 
 The sum

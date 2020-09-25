@@ -1,3 +1,4 @@
+package APCS.Pairs;
 import java.util.Scanner;
 
 public class PairTest
