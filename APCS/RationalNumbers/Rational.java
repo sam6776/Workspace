@@ -163,18 +163,34 @@ public class Rational implements Comparable
 
       return num1;
    }
-
+   /** compareTo
+    * @param A Rational fraction object
+    * @return A integer representation of the comparison
+    * Returns the comparison of the objects to a .0001 degree of accuracy, 
+    * and then multiplied by 1000 to make it an integer.
+    */
    @Override
    public int compareTo(Object obj)
    {
       Rational rat = (Rational) obj;
       int otherDenom = rat.getDenominator();
       int otherNum =  rat.getNumerator();
-      double otherValue = otherNum / otherDenom;
-      double Value = this.numerator / this.denominator;
+      double otherValue = (double)otherNum / (double)otherDenom; // get the double value of the fraction
+      double Value = (double) this.numerator / (double) this.denominator; // get the double value of the other
       DecimalFormat df = new DecimalFormat("#.####");
-      otherValue = Double.parseDouble(df.format(otherValue));
+      otherValue = Double.parseDouble(df.format(otherValue)); // format both of them to .0001 accuracy
       Value = Double.parseDouble(df.format(Value));
-      return (int) (Value - otherValue);
+      double comparison = (Value - otherValue) * 10000; // multiply it to become an integer
+      return (int) Math.round(comparison); // round it using the math class to prevent casting loss
+   }
+   /** compareToConvert
+    * Divides the returned value by 10000 to get the fractional value
+    * @param compared The Number from the compareTo method
+    * @return The fraction that was divided
+    */
+   public double compareToConvert(int compared)
+   {
+      double original = (double) compared / 10000; // multiply it by 10000 to return it to the original value
+      return original;
    }
 }
