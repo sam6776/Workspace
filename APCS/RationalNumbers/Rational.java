@@ -25,7 +25,7 @@ public class Rational implements Comparable
          numer = numer * -1;
          denom = denom * -1;
       }
-
+      
       numerator = numer;
       denominator = denom;
 
