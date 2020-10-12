@@ -24,5 +24,10 @@ public class driver
         System.out.println("Coin b is locked: " + b.locked());
         b.flip(); // flip it to assign a state
         System.out.println("After unlocked: " + b); // print out the value after its been unlocked
+
+        String x = "a";
+        String y = "b";
+        System.out.println(y.compareTo(x));
+        
     }    
 }
