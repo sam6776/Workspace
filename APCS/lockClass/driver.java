@@ -6,6 +6,7 @@ public class driver
     {
         Coin a = new Coin();
         a.flip(); // get a value
+        System.out.println("The coin is locked: " + a.locked());
         System.out.println("Before locked: " + a);
         a.lock(0); // lock the lock using the default key
         System.out.println("After locked: " + a);
@@ -20,6 +21,7 @@ public class driver
         System.out.println("Coin was chosen to be locked by default");
         System.out.println("Attempt to print coin B: " + b); // doesn't give a value
         b.unlock(365); // unlock it with key
+        System.out.println("Coin b is locked: " + b.locked());
         b.flip(); // flip it to assign a state
         System.out.println("After unlocked: " + b); // print out the value after its been unlocked
     }    

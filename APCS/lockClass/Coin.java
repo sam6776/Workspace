@@ -78,7 +78,7 @@ public class Coin implements lockable
          }
          return faceName;
       }
-      faceName = "The class is currently locked, pleace unlock it.";
+      faceName = "The class is currently locked, pleace unlock it."; // different string returned if the class is locked
       return faceName;
    }
 
@@ -89,13 +89,13 @@ public class Coin implements lockable
      */
     public void lock(int key) 
     {
-        if(this.key == key)
+        if(this.key == key) // locks if the keys are the same
         {
            isLocked = true;
         }
         else
         {
-           System.out.println("The key given is incorrect.");
+           System.out.println("The key given is incorrect."); // tells if it isn't correct
         }
     }
 
@@ -106,7 +106,7 @@ public class Coin implements lockable
     @Override
     public void unlock(int key)
      {
-        if(this.key == key)
+        if(this.key == key) // unlocks if the keys are the same
         {
            isLocked = false;
         }
@@ -141,6 +141,6 @@ public class Coin implements lockable
     @Override
     public boolean locked() 
     {
-        return isLocked;
+        return isLocked; // returns if it is locked
     }
 }
