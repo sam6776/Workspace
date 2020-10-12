@@ -1,4 +1,5 @@
-public interface lockable {
+public interface lockable
+{
     
 }
 

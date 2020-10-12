@@ -6,7 +6,7 @@
 
 import java.util.Random;
 
-public class Coin
+public class Coin implements lockable
 {
    private final int HEADS = 0;
    private final int TAILS = 1;
