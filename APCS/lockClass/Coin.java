@@ -1,3 +1,4 @@
+package APCS.lockClass;
 //********************************************************************
 //  Coin.java       Author: Lewis/Loftus/Cocking
 //
@@ -50,4 +51,28 @@ public class Coin implements lockable
 
       return faceName;
    }
+
+    @Override
+    public void lock(int key) 
+    {
+        // TODO
+    }
+
+    @Override
+    public void unlock(int key)
+     {
+        // TODO
+    }
+
+    @Override
+    public void setKey(int key)
+     {
+        // TODO
+    }
+
+    @Override
+    public boolean locked() 
+    {
+        // TODO
+    }
 }
