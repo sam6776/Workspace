@@ -46,7 +46,7 @@ public class Coin implements lockable
    //-----------------------------------------------------------------
    public void flip ()
    {
-      if(!(isLocked))
+      if(!(isLocked)) // locks the method if it is locked
       {
          face = (int) (Math.random() * 2);
       }
@@ -57,7 +57,7 @@ public class Coin implements lockable
    //-----------------------------------------------------------------
    public boolean isHeads ()
    {
-      return (face == HEADS);
+      return (face == HEADS); // not locked because it doesn't change data
    }
 
    //-----------------------------------------------------------------
@@ -66,23 +66,27 @@ public class Coin implements lockable
    public String toString()
    {
       String faceName;
-      if(!(isLocked))
+      if(!(isLocked)) // locks the method if it is locked
       {
          if (face == HEADS)
          {
             faceName = "Heads";
          }  
-      else
-      {
-         faceName = "Tails";
-      }
-      return faceName;
+         else
+         { 
+            faceName = "Tails";
+         }
+         return faceName;
       }
       faceName = "The class is currently locked, pleace unlock it.";
       return faceName;
    }
 
     @Override
+    /** lock
+     *  Locks the methods if the key given equals the original key
+     * @param key the key for the class
+     */
     public void lock(int key) 
     {
         if(this.key == key)
@@ -95,6 +99,10 @@ public class Coin implements lockable
         }
     }
 
+    /** unlock
+     * Unlocks the methods if the key given equals the original key
+     * @param key the key for the class
+     */
     @Override
     public void unlock(int key)
      {
@@ -108,12 +116,20 @@ public class Coin implements lockable
         }
     }
 
+    /** setKey
+     *  Sets the key for the class to be a specific integer value
+     * @param key the new key
+     */
     @Override
     public void setKey(int key)
      {
         this.key = key;
     }
 
+    /** locked
+     *  Tests whether the class is locked or unlocked
+     * @return if the class is locked
+     */
     @Override
     public boolean locked() 
     {
