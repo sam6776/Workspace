@@ -8,6 +8,13 @@
       "type": "java",
       "name": "CodeLens (Launch) - driver",
       "request": "launch",
+      "mainClass": "APCS.lockClass.driver",
+      "projectName": "Workspace_d75d37aa"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - driver",
+      "request": "launch",
       "mainClass": "driver",
       "projectName": "Workspace_d75d37aa"
     }

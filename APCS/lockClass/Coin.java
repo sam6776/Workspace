@@ -118,12 +118,20 @@ public class Coin implements lockable
 
     /** setKey
      *  Sets the key for the class to be a specific integer value
-     * @param key the new key
+     * @param currentKey the current key
+     * @param newKey the new key
      */
     @Override
-    public void setKey(int key)
+    public void setKey(int currentKey, int newKey) 
      {
-        this.key = key;
+        if(currentKey == key) // checking if the old key is correct
+        {
+           key = newKey;
+        }
+        else
+        {
+           System.out.println("The current key given was incorrect");
+        }
     }
 
     /** locked

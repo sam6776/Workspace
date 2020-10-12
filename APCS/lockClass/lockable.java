@@ -15,9 +15,10 @@ public interface lockable
 
     /** setKey
      *  Sets the key for the class to be a specific integer value
-     * @param key the new key
+     * @param currentKey the old key
+     * @param newKey the new key
      */
-    abstract public void setKey(int key);
+    abstract public void setKey(int currentKey, int newKey);
 
     /** locked
      *  Tests whether the class is locked or unlocked
