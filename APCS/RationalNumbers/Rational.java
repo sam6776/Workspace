@@ -1,3 +1,5 @@
+package APCS.RationalNumbers;
+
 import java.text.DecimalFormat;
 
 //********************************************************************

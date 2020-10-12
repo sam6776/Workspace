@@ -36,7 +36,7 @@ public class PairTest
             input2.close();
         } catch (Exception e) 
         {
-            //TODO: handle exception
+            
         }
         // Invoking the Pairs class, calling the constructor, and testing the methods
         Pair nums = new Pair(num1, num2);

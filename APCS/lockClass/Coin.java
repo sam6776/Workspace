@@ -5,8 +5,6 @@ package APCS.lockClass;
 //  Represents a coin with two sides that can be flipped.
 //********************************************************************
 
-import java.util.Random;
-
 public class Coin implements lockable
 {
    private final int HEADS = 0;
