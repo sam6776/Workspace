@@ -12,5 +12,7 @@ public class vigenereCipher
         sc.close();
         encryption encrypt = new encryption(plainText);
         System.out.println(encrypt.encrypt());
-	}
+        System.out.println(encrypt.decrypt());
+        System.out.println(encrypt);
+    }
 }

@@ -66,5 +66,11 @@ public class encryption
             }
         }
         return decryptedText;
-    }  
+    }
+    public String toString()
+    {
+        String output = "Plaintext: " + plainText + "\nEncrypted Text: " + encryptedText
+        + "\nDecrypted Text: " + decryptedText;
+        return output;
+    }
 }
