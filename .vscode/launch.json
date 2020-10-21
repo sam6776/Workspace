@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - vigenereCipher",
+      "request": "launch",
+      "mainClass": "APCS.arr.vigenereCipher",
+      "projectName": "Workspace_d75d37aa"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - driver",
       "request": "launch",
       "mainClass": "APCS.arr.driver",

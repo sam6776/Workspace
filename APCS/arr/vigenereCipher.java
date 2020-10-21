@@ -7,12 +7,12 @@ public class vigenereCipher
 	public static void main(String[] args) 
 	{
         Scanner sc = new Scanner(System.in);
-        System.out.println("Give a phrase to encrypt");
+        System.out.print("Give a phrase to encrypt: ");
         String plainText = sc.nextLine();
         sc.close();
         encryption encrypt = new encryption(plainText);
-        System.out.println(encrypt.encrypt());
-        System.out.println(encrypt.decrypt());
-        System.out.println(encrypt);
+        System.out.println("Encryption: " + encrypt.encrypt());
+        System.out.println("Decryption: " + encrypt.decrypt());
+        System.out.println("toString: \n" + encrypt);
     }
 }
