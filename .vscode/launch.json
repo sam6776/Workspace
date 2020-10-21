@@ -8,7 +8,7 @@
     "name": "(gdb) Launch",
     "type": "cppdbg",
     "request": "launch",
-    "program": "${workspaceFolder}/cpp/magicball/ball.cpp",
+    "program": "${workspaceFolder}/cpp/magicball/",
     "args": [],
     "stopAtEntry": false,
     "cwd": "${workspaceFolder}",
@@ -30,26 +30,5 @@
       "mainClass": "APCS.arr.vigenereCipher",
       "projectName": "Workspace_d75d37aa"
     },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - driver",
-      "request": "launch",
-      "mainClass": "APCS.arr.driver",
-      "projectName": "Workspace_d75d37aa"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - driver",
-      "request": "launch",
-      "mainClass": "APCS.lockClass.driver",
-      "projectName": "Workspace_d75d37aa"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - driver",
-      "request": "launch",
-      "mainClass": "driver",
-      "projectName": "Workspace_d75d37aa"
-    }
   ]
 }
