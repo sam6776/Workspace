@@ -14,28 +14,51 @@ public class Quiz {
         questions = new ArrayList<Question>(10);
         File questionFile = new File("questions");
         File answerFile = new File("answers");
+        File compFile = new File("complexity");
         Scanner questionRead = new Scanner(questionFile);
         Scanner answerRead = new Scanner(answerFile);
-        while (questionRead.hasNext() && answerRead.hasNext())
+        Scanner comp = new Scanner(compFile);
+        while (questionRead.hasNext() && answerRead.hasNext() && comp.hasNext())
         {
-            questions.add(new Question(questionRead.nextLine(), answerRead.nextLine()));
+            Question q = new Question(questionRead.nextLine(), answerRead.nextLine());
+            q.setComplexity(Integer.parseInt(comp.nextLine()));
+            questions.add(q);
         }
         questionRead.close();
         answerRead.close();
+        comp.close();
     }
 
     public void addQuestion(Question question, int complexity) throws IOException
     {
-        question.setComplexity(complexity);
-        questions.add(question);
         File questionFile = new File("questions");
         File answerFile = new File("answers");
+        File compFile = new File("complexity");
+        Scanner qScan = new Scanner(answerFile);
+        FileWriter cWrite = new FileWriter(compFile, true);
         FileWriter qWrite = new FileWriter(questionFile, true);
         FileWriter aWrite = new FileWriter(answerFile, true);
-        qWrite.write(question.getQuestion());
-        aWrite.write(question.getAnswer());
+        boolean notCopied = true;
+        while(qScan.hasNext())
+        {
+            if(question.getAnswer().equals(qScan.nextLine()))
+            {
+                notCopied = false;
+                break;
+            }
+        }
+        if(notCopied)
+        {
+            question.setComplexity(complexity);
+            questions.add(question);
+            qWrite.write(question.getQuestion() + "\n");
+            aWrite.write(question.getAnswer() + "\n");
+            cWrite.write(question.getComplexity() + "\n");
+        }
         qWrite.close();
         aWrite.close();
+        cWrite.close();
+        qScan.close();
     }
     /** giveQuiz
      * Gives the user a quiz based on the questions in the quiz arraylist
@@ -49,7 +72,7 @@ public class Quiz {
         {
             System.out.println(questions.get(i).getQuestion());
             String ans = input.nextLine();
-            if(ans == questions.get(i).getAnswer())
+            if(ans.equals(questions.get(i).getAnswer()))
             {
                 System.out.println("Correct");
                 score++;
