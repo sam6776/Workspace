@@ -30,7 +30,6 @@ public class QuizTime {
             quiz.addQuestion(q10, 0);
             quiz.addQuestion(q11, 11);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         int score = quiz.giveQuiz();
