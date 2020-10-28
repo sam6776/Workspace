@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class quiz {
+public class Quiz {
     private ArrayList<Question> questions;
 
-    public quiz() throws FileNotFoundException {
+    public Quiz() throws FileNotFoundException {
         questions = new ArrayList<Question>(10);
         File questionFile = new File("questions");
         File answerFile = new File("answers");
@@ -24,20 +24,23 @@ public class quiz {
         answerRead.close();
     }
 
-    public void addQuestion(String question, String answer, int complexity) throws IOException
+    public void addQuestion(Question question, int complexity) throws IOException
     {
-        Question q = new Question(question + " (Level: " + complexity + ")", answer);
-        questions.add(q);
-
+        question.setComplexity(complexity);
+        questions.add(question);
         File questionFile = new File("questions");
         File answerFile = new File("answers");
         FileWriter qWrite = new FileWriter(questionFile, true);
         FileWriter aWrite = new FileWriter(answerFile, true);
-        qWrite.write(q.getQuestion());
-        aWrite.write(q.getAnswer());
+        qWrite.write(question.getQuestion());
+        aWrite.write(question.getAnswer());
         qWrite.close();
         aWrite.close();
     }
+    /** giveQuiz
+     * Gives the user a quiz based on the questions in the quiz arraylist
+     * @return The score the user got 
+     */
     public int giveQuiz()
     {
         int score = 0;

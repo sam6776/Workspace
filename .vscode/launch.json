@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - QuizTime",
+      "request": "launch",
+      "mainClass": "APCS.quizProgram.QuizTime",
+      "projectName": "Workspace_d75d37aa"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - MiniQuiz",
       "request": "launch",
       "mainClass": "APCS.quizProgram.MiniQuiz",
