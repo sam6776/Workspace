@@ -7,6 +7,7 @@ public class encryption
     private String plainText;
     private char arr[][];
     private String key;
+    private String spacelessKey;
     /** Encryption constructor
      * Initializes the instance data, and the table
      * @param plain The plaintext
@@ -30,6 +31,14 @@ public class encryption
         encryptedText = "";
         key = "corsair"; // default key
         decryptedText = "";
+        spacelessKey = "";
+        for(int i = 0; i < plainText.length(); i++)
+        {
+            if(plain.charAt(i) != ' ')
+            {
+                spacelessKey += plainText.charAt(i);
+            }
+        }
     }
     /** Encrypt
      * Encrypts the plain text using the vigenere cipher
@@ -43,11 +52,26 @@ public class encryption
             if(n < key.length())
             {
                 char keyChar = key.charAt(n);
-                encryptedText += arr[keyChar - 97][plainChar - 97];
+                if(plainChar == ' ')
+                {
+                    encryptedText += " ";
+                }
+                else
+                {
+                    encryptedText += arr[keyChar - 97][plainChar - 97];
+                }
             }
-            else{
-                char keyChar = plainText.charAt(n - key.length());
-                encryptedText += arr[keyChar - 97][plainChar - 97];
+            else
+            {
+                char keyChar = spacelessKey.charAt(n - key.length());
+                if(plainChar == ' ')
+                {
+                    encryptedText += " ";
+                }
+                else
+                {
+                    encryptedText += arr[keyChar - 97][plainChar - 97];
+                }
             }
         }
         return encryptedText;
@@ -61,7 +85,11 @@ public class encryption
         for(int i = 0; i < encryptedText.length(); i++)
         {
             char encryptChar = encryptedText.charAt(i);
-            if(i < key.length())
+            if(encryptChar == ' ')
+            {
+                decryptedText += " ";
+            }
+            else if(i < key.length())
             {
                 char keyChar = key.charAt(i);
                 for(int a = 0; a < 26; a++)
@@ -72,12 +100,13 @@ public class encryption
                         {
                             decryptedText += arr[0][b];
                         }
+
                     }
                 }
             }
             else
             {
-                char keyChar = plainText.charAt(i - key.length());
+                char keyChar = spacelessKey.charAt(i - key.length());
                 for(int a = 0; a < 26; a++)
                 {
                     for(int b = 0; b < 26; b++)
