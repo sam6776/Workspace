@@ -4,14 +4,15 @@ class test
 {
     public static void main(String[] args)
     {
-        int x = 0;
-        for (int row = 5; row <= 11; row++)
+        String one = "test";
+        String two = "testing";
+        if(one.equals(two))
         {
-            for (int col = 3; col <= 18; col++)
-            {
-              x++;
-            }
+            System.out.println("yes");
         }
-        System.out.println(x);
+        else
+        {
+            System.out.println("no");
+        }
     }
 }
